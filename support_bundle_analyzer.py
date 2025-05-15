@@ -118,7 +118,7 @@ class SupportBundleAnalyzer:
             with open(version_file, 'r') as f:
                 version_data = yaml.safe_load(f)
                 
-            self.console.print("\n[bold]Version Information[/bold]")
+            self.console.print("\n[bold]Support Bundle Version Information[/bold]")
             table = Table(show_header=True, header_style="bold magenta")
             table.add_column("Component", style="dim")
             table.add_column("Version", justify="right")
@@ -168,8 +168,6 @@ class SupportBundleAnalyzer:
                     release = release_info['currentRelease']
                     if 'versionLabel' in release:
                         table.add_row("Version", release['versionLabel'])
-                    if 'releaseNotes' in release:
-                        table.add_row("Release Notes", release['releaseNotes'])
                     if 'deployedAt' in release:
                         table.add_row("Deployed At", release['deployedAt'])
                     if 'helmReleaseRevision' in release:
